@@ -1,9 +1,8 @@
 SELECT
-    subscriber_type,
+    duration_minutes AS trip_duration,
     start_time,
-    duration_minutes,
     start_station_name,
-    start_station_id
-
+    start_station_id,
+    subscriber_type
 FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips`
 ORDER BY start_time
