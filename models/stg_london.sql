@@ -1,8 +1,8 @@
 SELECT
-    duration
-    start_date
-    start_station_id
+    duration,
+    start_date,
+    start_station_id,
     start_station_name
 
 FROM `bigquery-public-data.london_bicycles.cycle_hire`
-ORDER BY start_date
+ORDER BY start_date DESC
