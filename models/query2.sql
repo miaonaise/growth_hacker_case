@@ -24,7 +24,6 @@ SELECT
     year,
     subscriber_type AS most_successful_type,
     total_duration_minutes
-    counts
 FROM help
 WHERE total_duration_minutes IN
 (
@@ -32,4 +31,4 @@ WHERE total_duration_minutes IN
     FROM help
     GROUP BY year
 )
-ORDER BY year
+ORDER BY year DESC
