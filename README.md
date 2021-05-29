@@ -1,3 +1,5 @@
+## Dashboard for Bike Rental Services
+
 Welcome to my first dbt project!
 
 ### About the project
@@ -22,9 +24,19 @@ bigquery-public-data:austin_bikeshare.bikeshare_trips
 You can only process tables that belong in the same multi-region (EU or US). Therefore I had to manually move the london_bicycles dataset into the local kernel in order to process it in the US. This was achieved with the help of Google's instructions.
 If you want to run this dbt, think about the processing location of your BigQuery.
 
-### Model Descriptions
+### Interpretation of Task
+The three datasets given are individual datasets and spans at different dates. 
 
+|                 | New york              | London                | Austin                |
+| --------------- |:---------------------:|:---------------------:|:---------------------:|
+| Earliest recorded trip start time | 2013-07-01 T 00:00:00 | 2015-01-04 T 00:00:00 | 2013-12-21 T 09:12:00 |
+| Lastest recorded trip start time  | 2018-05-31 T 23:59:59 | 2017-06-13 T 23:59:00 | 2021-02-28 T 23:06:26 |
+| Number of datapoints | 58,937,715 | 24,369,201 | 1,342,066 |
 
+1. 
+2.
+3. Only
+4. 
 
 ### Result
 The Dashboard is displayed in Google Data Studios and can be accessed with the following link:
