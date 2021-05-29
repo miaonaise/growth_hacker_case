@@ -1,13 +1,34 @@
-SELECT trip_duration, start_station_name, start_time
-FROM {{ ref('stg_london') }}
-WHERE start_time >= '2017-06-05' AND start_time <= '2017-06-11'
-UNION ALL
-SELECT trip_duration, start_station_name, start_time
-FROM {{ ref('stg_austin') }}
-WHERE start_time >= '2017-06-05' AND start_time <= '2017-06-11'
-UNION ALL
-SELECT trip_duration, start_station_name, start_time
-FROM {{ ref('stg_newyork') }}
-WHERE start_time >= '2017-06-05' AND start_time <= '2017-06-11'
+WITH austin AS(
+    SELECT 
+        duration_minutes,
+        EXTRACT(YEAR FROM start_time) AS year,
+        subscriber_type,
+    FROM `bigquery-public-data.austin_bikeshare.bikeshare_trips`
+    WHERE EXTRACT(YEAR FROM start_time) >= 2014 AND EXTRACT(YEAR FROM start_time) <= 2020
+        AND subscriber_type IS NOT NULL
+        AND duration_minutes IS NOT NULL
+),
 
-ORDER BY start_time DESC
+help AS(
+    SELECT
+        subscriber_type,
+        SUM(duration_minutes) AS total_duration_minutes,
+        COUNT(*) AS count,
+        year
+    FROM austin
+    GROUP BY subscriber_type, year
+    ORDER BY SUM(duration_minutes) DESC
+)
+
+SELECT 
+    year,
+    subscriber_type AS most_successful_type,
+    total_duration_minutes
+FROM help
+WHERE total_duration_minutes IN
+(
+    SELECT MAX(total_duration_minutes)
+    FROM help
+    GROUP BY year
+)
+ORDER BY year

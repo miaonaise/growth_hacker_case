@@ -36,7 +36,8 @@ The three datasets given are individual datasets and spans at different dates.
 For consistency, "Last month" will be referred to as May 2017. 
 
 1. A week is interpreted to start on Monday and end on Sunday. Therefore "Last Week" will correspond to the week with dates from 2017-06-05 to 2017-06-11 (included).
-2. The dataset from London does not have subscriber_type, therefore only datasets from New York and Austin are considered. The years 2014-2017 (included) are considered.
+2. The dataset from London does not have subscriber_type, the New York dataset has very vague subscriber types compared to the subscriber types available in the Austin dataset. 
+Therefore, only the Austin dataset will be considered for this task. The years 2014-2020 (included) are considered.
 3. Only New york dataset has information on age and gender, therefore only this dataset will be conisdered. "Last month" = May 2017. "Age" = 2017 - birth_year.
 4. "Last month" = May 2017.
 
