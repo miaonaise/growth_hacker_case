@@ -53,4 +53,4 @@ SELECT * FROM london4
 UNION ALL
 SELECT * FROM london5
 
-ORDER BY start_time DESC
+ORDER BY start_time
