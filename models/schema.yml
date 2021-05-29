@@ -26,3 +26,12 @@ models:
             tests:
                 - not_null
 
+    - name: query2
+      description: "Task 2: Most successful subscriber type 2014-2020 in Austin"
+      columns:
+          - name: year
+            description: "year"
+            tests:
+                - not_null
+                - unique
+
