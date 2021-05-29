@@ -1,6 +1,6 @@
 SELECT
-    duration_minutes AS trip_duration,
-    start_time,
+    duration_minutes * 60 AS trip_duration,
+    EXTRACT(DATE FROM start_time) AS start_time,
     start_station_name,
     start_station_id,
     subscriber_type
