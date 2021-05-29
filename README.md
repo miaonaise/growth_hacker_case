@@ -1,15 +1,30 @@
-Welcome to your new dbt project!
+Welcome to my first dbt project!
 
-### Using the starter project
+### About the project
 
-Try running the following commands:
-- dbt run
-- dbt test
+This is work sample for a job application process. The task is to create a dashboard for a fictional bike rental business.
+
+The dashboard should include the following:
+1. Top 20 performing stations last week, globally, interms of rides started or duration ofrides started.
+2. Most successful subscriber_type, year on year comparison(in terms of ride durationminutes)
+3. Break-down of last months riders, by age / gendergroups (think bar charts)
+4. Top Cities last month in terms of rides / duration
+
+### The Data
+
+The Data is located in three different public datasets in Google BigQuery:
+
+bigquery-public-data:new_york_citibike.citibike_trips
+bigquery-public-data:london_bicycles.cycle_hire
+bigquery-public-data:austin_bikeshare.bikeshare_trips
+
+**/!\** The london_bicycles dataset is located in the EU. The other two datasets are located in the US and the BigQuery project is chosen to process in the US as well.
+You can only process tables that belong in the same multi-region (EU or US). Therefore I had to manually move the london_bicycles dataset into the local kernel in order to process it in the US. This was achieved with the help of Google's instructions.
+If you want to run this dbt, think about the processing location of your BigQuery.
+
+### Model Descriptions
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](http://slack.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+
+### Result
+The Dashboard is displayed in Google Data Studios and can be accessed with the following link:
