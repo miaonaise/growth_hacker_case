@@ -1,0 +1,28 @@
+
+version: 2
+
+models:
+    - name: stg_austin
+      description: "Bike data from Austin"
+      columns:
+          - name: trip_duration
+            description: "The trip duration in minutes"
+            tests:
+                - not_null
+
+    - name: stg_newyork
+      description: "Bike data from New York"
+      columns:
+          - name: trip_duration
+            description: "The trip duration in seconds"
+            tests:
+                - not_null
+
+    - name: stg_london
+      description: "Bike data from London"
+      columns:
+          - name: trip_duration
+            description: "The trip duration in seconds"
+            tests:
+                - not_null
+

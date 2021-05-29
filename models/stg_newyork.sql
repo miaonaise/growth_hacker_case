@@ -7,4 +7,5 @@ SELECT
 	birth_year,
 	gender
 FROM `bigquery-public-data.new_york_citibike.citibike_trips`
+WHERE tripduration IS NOT NULL
 ORDER BY starttime DESC
