@@ -16,9 +16,9 @@ The dashboard should include the following:
 
 The Data is located in three different public datasets in Google BigQuery:
 
-bigquery-public-data:new_york_citibike.citibike_trips
-bigquery-public-data:london_bicycles.cycle_hire
-bigquery-public-data:austin_bikeshare.bikeshare_trips
+- bigquery-public-data:new_york_citibike.citibike_trips
+- bigquery-public-data:london_bicycles.cycle_hire
+- bigquery-public-data:austin_bikeshare.bikeshare_trips
 
 **OBS!** The london_bicycles dataset is located in the EU. The other two datasets are located in the US and the BigQuery project is chosen to process in the US as well.
 You can only process tables that belong in the same multi-region (EU or US). Therefore I had to manually move the london_bicycles dataset into the local kernel in order to process it in the US. This was achieved with the help of Google's instructions.
