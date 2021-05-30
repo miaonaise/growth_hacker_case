@@ -13,10 +13,10 @@ help AS(
     SELECT
         subscriber_type,
         SUM(duration_minutes) AS total_duration_minutes,
-        COUNT(*) AS count,
+        COUNT(1) AS counts,
         year
     FROM austin
-    GROUP BY subscriber_type, year
+    GROUP BY year, subscriber_type
     ORDER BY SUM(duration_minutes) DESC
 )
 
@@ -31,4 +31,4 @@ WHERE total_duration_minutes IN
     FROM help
     GROUP BY year
 )
-ORDER BY year
+ORDER BY year DESC
