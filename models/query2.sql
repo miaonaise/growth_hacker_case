@@ -21,9 +21,9 @@ help AS(
 )
 
 SELECT 
-    year,
-    subscriber_type AS most_successful_type,
-    total_duration_minutes
+    year AS Year,
+    subscriber_type AS Most_Successful_SubscriberType,
+    total_duration_minutes AS Total_Duration_Minutes
 FROM help
 WHERE total_duration_minutes IN
 (

@@ -21,11 +21,11 @@ The Data is located in three different public datasets in Google BigQuery:
 - bigquery-public-data:austin_bikeshare.bikeshare_trips
 
 **OBS!** The london_bicycles dataset is located in the EU. The other two datasets are located in the US and the BigQuery project is chosen to process in the US as well.
-You can only process tables that belong in the same multi-region (EU or US). Therefore I had to manually move the london_bicycles dataset into the local kernel in order to process it in the US. This was achieved with the help of Google's instructions.
+You can only process tables that belong in the same multi-region (EU or US). Therefore I had to manually move the london_bicycles dataset into the local kernel in order to process it in the US. This was achieved with the help of Google's [instructions](https://cloud.google.com/bigquery/docs/locations#moving-data).
 If you want to run this dbt, think about the processing location of your BigQuery.
 
 ### Interpretation of Task
-The three datasets given are individual datasets and spans at different dates. 
+The three datasets given are individual datasets and have a different span. 
 
 |                 | New york              | London                | Austin                |
 | --------------- |:---------------------:|:---------------------:|:---------------------:|
@@ -35,15 +35,16 @@ The three datasets given are individual datasets and spans at different dates.
 
 For consistency, "Last month" will be referred to as May 2017. 
 
-1. A week is interpreted to start on Monday and end on Sunday. Therefore "Last Week" will correspond to the week with dates from 2017-06-05 to 2017-06-11 (included).
+1. A week is interpreted to start on Monday and end on Sunday. Therefore "Last Week" will correspond to the week with dates from 2017-06-05 to 2017-06-11. 
+Moreover, more stations than the top20 are selected in the query so that the user has the freedom to adjust how the top cities is sorted in Google Data Studios. 
 2. The dataset from London does not have subscriber_type, the New York dataset has very vague subscriber types compared to the subscriber types available in the Austin dataset. 
-Therefore, only the Austin dataset will be considered for this task. The years 2014-2020 (included) are considered.
-3. Only New york dataset has information on age and gender, therefore only this dataset will be conisdered. "Last month" = May 2017. "Age" = 2017 - birth_year.
+Therefore, only the Austin dataset will be considered for this task. The years 2014-2020 are considered.
+3. Only New york dataset has information on age and gender, therefore only this dataset will be conisdered. "Last month" = May 2017 and "Age" = 2017 - birth_year.
 4. "Last month" = May 2017.
 
 ### Result
-The Dashboard is displayed in Google Data Studios and can be accessed with the following link:
-
+The Dashboard is displayed in Google Data Studios and can be accessed with the following [link]
+![picture of dashboard](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Dashboard")
 
 ### Comments
-I had basic SQL knowledge but no prior experience with BigQuery, dtb or Google Data Studios at the beginning of this task. 20 hours were spent completing this repistory.
+Around 24 hours were spent on this project. My background consists of basic SQL knowledge but no prior experience with BigQuery, dtb or Google Data Studios at the beginning of this task.
