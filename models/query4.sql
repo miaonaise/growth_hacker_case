@@ -12,7 +12,7 @@ WITH union_data AS(
     WHERE start_date >= '2017-05-01' AND start_date <= '2017-05-31'
 )
 
-SELECT City, COUNT(1) AS Number_of_Rides, SUM(trip_duration) AS Total_Duration_Minutes
+SELECT City, COUNT(1) AS Number_of_Rides, ROUND(SUM(trip_duration)/60) AS Total_Duration_Minutes
 FROM union_data
 GROUP BY City
 ORDER BY COUNT(1) DESC
