@@ -5,7 +5,7 @@ WITH union_data AS(
     UNION ALL
     SELECT trip_duration, start_station_name, start_date
     FROM {{ ref('stg_austin') }}
-    WHERE sstart_date >= '2017-06-05' AND start_date <= '2017-06-11'
+    WHERE start_date >= '2017-06-05' AND start_date <= '2017-06-11'
     UNION ALL
     SELECT trip_duration, start_station_name, start_date
     FROM {{ ref('stg_newyork') }}
