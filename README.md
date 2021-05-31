@@ -48,4 +48,4 @@ The Dashboard is displayed in Google Data Studios and can be accessed with the f
 ![picture of dashboard](https://github.com/miaonaise/growth_hacker_case/blob/master/dashboard-preview.png)
 
 ### Comments
-Around 24 hours were spent on this project. My background consists of basic SQL knowledge but no prior experience with BigQuery, dtb or Google Data Studios at the beginning of this task.
+Around 20 hours were spent on this project. My background consists of basic SQL knowledge but no prior experience with BigQuery, dtb or Google Data Studios at the beginning of this task.
