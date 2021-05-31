@@ -1,7 +1,7 @@
 WITH london1 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london1`
@@ -10,7 +10,7 @@ WITH london1 AS(
 london2 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london2`
@@ -19,7 +19,7 @@ london2 AS(
 london3 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london3`
@@ -28,7 +28,7 @@ london3 AS(
 london4 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london4`
@@ -37,7 +37,7 @@ london4 AS(
 london5 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london5`
@@ -53,4 +53,4 @@ SELECT * FROM london4
 UNION ALL
 SELECT * FROM london5
 
-ORDER BY start_time
+ORDER BY start_date

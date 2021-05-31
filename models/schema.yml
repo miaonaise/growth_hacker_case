@@ -3,15 +3,15 @@ version: 2
 
 models:
     - name: stg_austin
-      description: "Bike data from Austin"
+      description: "Preprocessed bike data from Austin"
       columns:
           - name: trip_duration
-            description: "The trip duration in minutes"
+            description: "The trip duration in seconds"
             tests:
                 - not_null
 
     - name: stg_newyork
-      description: "Bike data from New York"
+      description: "Preprocessed bike data from New York"
       columns:
           - name: trip_duration
             description: "The trip duration in seconds"
@@ -19,19 +19,73 @@ models:
                 - not_null
 
     - name: stg_london
-      description: "Bike data from London"
+      description: "Preprocessed bike data from London"
       columns:
           - name: trip_duration
             description: "The trip duration in seconds"
             tests:
                 - not_null
 
-    - name: query2
-      description: "Task 2: Most successful subscriber type 2014-2020 in Austin"
+    - name: query1
+      description: "Task 1: Top performing stations last week, globally, interms of rides started or duration of rides started."
       columns:
-          - name: year
-            description: "year"
+          - name: Start_Station_Name
+            description: "Station Name"
             tests:
                 - not_null
                 - unique
+          - name: Number_of_Rides
+            description: "Number of started ride"
+            test:
+                - not null
+          - name: Total_Duration_Minutes
+            description: "Total duration of started rides in minutes"
 
+    - name: query2
+      description: "Task 2: Most successful subscriber type in Austin 2014-2020"
+      columns:
+          - name: Year
+            description: "Year"
+            tests:
+                - not_null
+                - unique
+          - name: Most_Successful_SubscriberType
+            description: "The most successful subscriber type in terms of total duration minutes"
+            test:
+                - not null
+          - name: Total_Duration_Minutes
+            description: "Total duration of started rides in minutes"
+
+    - name: query3
+      description: "Task 3: Break down of riders in New York by age and gender last month"
+      columns:
+          - name: Riders
+            description: "Count of riders"
+            test:
+                -not null
+          - name: Gender
+            description: "Gender of rider: Male, Female, Unknown"
+            test:
+              - not null
+              - accepted_values:
+                  values: ['Male','Female','Unknown']
+          - name: Age
+            description: "Age of rider"
+            test:
+              - not null
+
+    - name: query4
+      description: "Task 4: Top Cities last month in terms of rides / duration"  
+      columns:
+          - name: City
+            description: "City: London, New York, Austin"
+            test:
+              - not null
+              - accepted_values:
+                  values: ['London','New York','Austin']
+          - name: Number_of_Rides
+            description: "Number of started ride"
+            test:
+                - not null
+          - name: Total_Duration_Minutes
+            description: "Total duration of started rides in minutes"
