@@ -1,6 +1,6 @@
 SELECT
     tripduration AS trip_duration,
-    EXTRACT(DATE FROM starttime) AS start_time,
+    EXTRACT(DATE FROM starttime) AS start_date,
     start_station_id,
 	start_station_name,
 	usertype AS subscriber_type

@@ -1,7 +1,7 @@
 WITH london1 AS(
     SELECT
         duration AS trip_duration,
-        EXTRACT(DATE FROM start_date) AS start_time,
+        EXTRACT(DATE FROM start_date) AS start_date,
         start_station_id,
         start_station_name
     FROM `sweco-315108.copied_dataset.london1`
