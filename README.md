@@ -43,7 +43,7 @@ Therefore, only the Austin dataset will be considered for this task. The years 2
 4. "Last month" = May 2017.
 
 ### Result
-The Dashboard is displayed in Google Data Studios and can be accessed with the following [link]
+The Dashboard is displayed in Google Data Studios and can be accessed with the following [link](https://datastudio.google.com/reporting/c1c83570-64a7-4b04-9824-8336aff70943)
 ![picture of dashboard](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Dashboard")
 
 ### Comments
